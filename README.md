@@ -1,3 +1,4 @@
 # getting-started-k8s-with-java
 
-[slideshare id=81329864&doc=kuberneteswithjava-171029024236]
+
+{{<slideshare "IJQBCyayE2sMiA" "yasu7ri/kubernetes-with-java" "Kubernetes超入門 with java" "Yasunari Tanaka">}}
