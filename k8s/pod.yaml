@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rest-api
+spec:
+  containers:
+    - image: docker.io/uls555/getting-started-k8s-with-java:v1
+      imagePullPolicy: Always
+      name: rest-api

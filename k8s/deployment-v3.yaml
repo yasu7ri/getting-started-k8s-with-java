@@ -1,0 +1,15 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: rest-api-dep-v3
+spec:
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: my-rest-api-v3
+    spec:
+      containers:
+        - image: docker.io/uls555/getting-started-k8s-with-java:v3
+          imagePullPolicy: Always
+          name: rest-api

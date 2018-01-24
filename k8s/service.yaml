@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: rest-api-service
+spec:
+#  minikubeではLoadBalancerは非対応
+#  type: LoadBalancer
+# Ingress使用時は設定しない
+  type: NodePort
+  selector:
+    app: my-rest-api-v3
+  ports:
+    - port: 8080
+      targetPort: 8080

@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
+metadata:
+  name: rest-api-rs
+spec:
+  replicas: 4
+  template:
+    metadata:
+      labels:
+        app: my-rest-api
+    spec:
+      containers:
+        - image: docker.io/uls555/getting-started-k8s-with-java:v1
+          imagePullPolicy: Always
+          name: rest-api

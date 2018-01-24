@@ -1,0 +1,16 @@
+kind: Ingress
+apiVersion: extensions/v1beta1
+metadata:
+  name: nginx
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+    ingress.kubernetes.io/ssl-redirect: "false"
+
+spec:
+  rules:
+  - host: nginx.minikube.dev
+    http:
+      paths:
+      - backend:
+          serviceName: rest-api
+          servicePort: 8080
