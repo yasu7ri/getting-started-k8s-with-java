@@ -17,5 +17,5 @@ docker run -d -p 8080:8080 --name getting-started-k8s-with-java yasu7ri/getting-
 
 ## DockerイメージをDockerRegistryへPush
 ```
-$ docker push yasu7ri/getting-started-k8s-with-java:1.0.0
+docker push yasu7ri/getting-started-k8s-with-java:1.0.0
 ```
