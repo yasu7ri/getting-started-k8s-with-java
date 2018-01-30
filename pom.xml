@@ -4,11 +4,10 @@
 
     <groupId>com.example</groupId>
     <artifactId>getting-started-k8s-with-java</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>getting-started-k8s-with-java</name>
-    <url>http://maven.apache.org</url>
 
     <properties>
         <java.version>1.8</java.version>
