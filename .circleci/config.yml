@@ -26,25 +26,25 @@ jobs:
 
       # Download and cache dependencies
       - restore_cache:
-        keys: dependencies-{{ checksum "pom.xml" }}
+          keys: dependencies-{{ checksum "pom.xml" }}
 
       - run: mvn dependency:go-offline
 
       - save_cache:
-        key: dependencies-{{ checksum "pom.xml" }}
-        paths:
-          - ~/.m2
+          key: dependencies-{{ checksum "pom.xml" }}
+          paths:
+            - ~/.m2
 
       # run package
       - run: mvn package
 
       # docker build and push
       - run:
-        name: make docker images and push to dockerhub
-        command: |
-          docker build -t yasu7ri/getting-started-k8s-with-java .
-          docker login -u $DOCKER_USER -p $DOCKER_PASS
-          docker push yasu7ri/getting-started-k8s-with-java
+          name: make docker images and push to dockerhub
+          command: |
+            docker build -t yasu7ri/getting-started-k8s-with-java .
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker push yasu7ri/getting-started-k8s-with-java
 
 #workflows:
 #  version: 2
