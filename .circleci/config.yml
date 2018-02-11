@@ -23,6 +23,8 @@ jobs:
     steps:
       - checkout
 
+      - setup_remote_docker
+
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -39,3 +41,12 @@ jobs:
 
       # run package
       - run: mvn package
+
+      - run:
+        command: docker build -t yasu7ri/getting-started-k8s-with-java:${CIRCLE_TAG} .
+
+      - run:
+        command: docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
+
+      - run:
+        command: docker push yasu7ri/getting-started-k8s-with-java:${CIRCLE_TAG}
