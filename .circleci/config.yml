@@ -38,6 +38,8 @@ jobs:
       # run package
       - run: mvn package
 
+      - run: echo $CIRCLE_TAG
+
       # docker build and push
       - run:
           name: make docker images and push to dockerhub
