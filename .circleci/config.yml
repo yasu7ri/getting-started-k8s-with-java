@@ -42,9 +42,9 @@ jobs:
       - run:
           name: make docker images and push to dockerhub
           command: |
-            docker build -t yasu7ri/getting-started-k8s-with-java:$CIRCLE_TAG .
+            docker build -t yasu7ri/getting-started-k8s-with-java:1.0.0 .
             docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker push yasu7ri/getting-started-k8s-with-java:$CIRCLE_TAG
+            docker push yasu7ri/getting-started-k8s-with-java:1.0.0
 
 workflows:
   version: 2
