@@ -27,24 +27,35 @@ jobs:
 
       # Download and cache dependencies
       - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "pom.xml" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+        keys:
+        - v1-dependencies-{{ checksum "pom.xml" }}
+        # fallback to using the latest cache if no exact match is found
+        - v1-dependencies-
 
       - run: mvn dependency:go-offline
 
       - save_cache:
-          paths:
-            - ~/.m2
-          key: v1-dependencies-{{ checksum "pom.xml" }}
+        paths:
+          - ~/.m2
+        key: v1-dependencies-{{ checksum "pom.xml" }}
 
       # run package
       - run: mvn package
 
       # docker build and push
       - run:
-          command: |
-              docker build -t yasu7ri/getting-started-k8s-with-java .
-              docker login -u $DOCKER_USER -p $DOCKER_PASS
-              docker push yasu7ri/getting-started-k8s-with-java
+        command: |
+          docker build -t yasu7ri/getting-started-k8s-with-java .
+          docker login -u $DOCKER_USER -p $DOCKER_PASS
+          docker push yasu7ri/getting-started-k8s-with-java
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build:
+        filters:
+          branches:
+            ignore: /.*/
+          tags:
+            only: /^[0-9]+\.[0-9]+\.[0-9]+$/
