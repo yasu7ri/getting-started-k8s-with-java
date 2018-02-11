@@ -8,7 +8,7 @@ public class AppController {
     @RequestMapping("/version")
     public VersionResponse getVersion(){
         VersionResponse response = new VersionResponse();
-        response.setVersion("1.0.0");
+        response.setVersion("2.0.0");
         return response;
     }
 }
