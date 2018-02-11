@@ -4,7 +4,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>getting-started-k8s-with-java</artifactId>
-    <version>2.0.0</version>
+    <version>3.0.0</version>
     <packaging>jar</packaging>
 
     <name>getting-started-k8s-with-java</name>
