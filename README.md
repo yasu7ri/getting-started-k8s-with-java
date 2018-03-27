@@ -2,7 +2,7 @@
 ### Kubernetes超入門ハンズオン
 
 ## スライド
-[Kubernetes超入門 with java](https://www.slideshare.net/yasu7ri/kubernetes-with-java "Kubernetes超入門 with java")
+[Kubernetes超入門 with java](https://speakerdeck.com/yasu7ri/kubernetes-super-introduction-with-java "Kubernetes超入門 with java")
 
 ## DEMO用REST APIの作成
 ### Dockerイメージの作成
